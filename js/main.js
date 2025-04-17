@@ -10,6 +10,9 @@ const users = await fetcher.getUsers();
 // använder users() från importerade display ovan och skickar in arrayen med användare
 display.users(users);
 
-const toDos = await fetcher.getTodos(2);
+const posts = await fetcher.getPosts(2);
+console.log(posts);
 
+const toDos = await fetcher.getTodos(2);
 console.log(toDos);
+
