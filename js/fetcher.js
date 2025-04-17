@@ -31,3 +31,8 @@ export const getUsers = async () => {
 
 // 3) Skapa function för att hämta todos, function bör ta userId som parameter och returna todos
 // URL https://jsonplaceholder.typicode.com/todos?userId=USERID (byt ut USERID mot idt i parameter)
+
+export const getTodos = async (userId) => {
+  const data = await getJSON(`https://jsonplaceholder.typicode.com/todos?userId=${userId}`);
+  return data;
+}
