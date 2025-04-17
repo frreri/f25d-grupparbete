@@ -4,7 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>F25D - Grupparbete</title>
-    <meta name="description" content="F25D User posts and todos and stuff" />
+    <meta name="description" content="F25D User's posts and todos" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <!-- Här kan vi ha någon header bar eller rubrik? -->
+    </header>
+
+    <main id="user-container">
+      <!-- Fyll med användarkort eller liknande via js -->
+    </main>
+
+    <footer>
+      <!-- En footer kan vi skapa här -->
+    </footer>
+
+    <!-- overlay - filter mellan sidan och modalen -->
+    <div class="overlay"></div>
+    <!-- modal som visas när vi klickar användare -->
+    <div class="modal">
+      <section class="user-section">
+        <h2>User</h2>
+        <div id="userinfo-container">
+          <!-- Fylla på med lite användarinfo via js? -->
+        </div>
+      </section>
+
+      <section class="posts-section">
+        <h2>Posts</h2>
+        <div id="post-container">
+          <!-- fyll på med posts via js, varje post har en egen container för dess comments? -->
+        </div>
+      </section>
+
+      <section class="todos-section">
+        <h2>Todos</h2>
+        <div id="todo-container">
+          <!-- fylla på med todos via js -->
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
