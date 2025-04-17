@@ -12,3 +12,7 @@ display.users(users);
 
 const posts = await fetcher.getPosts(2);
 console.log(posts);
+
+const toDos = await fetcher.getTodos(2);
+console.log(toDos);
+
