@@ -29,5 +29,12 @@ export const getUsers = async () => {
 // 2) Skapa function för att hämta comments, function bör ta postId som parameter och returna comments
 // URL https://jsonplaceholder.typicode.com/comments?postId=POSTID (byt ut POSTID mot idt i parameter)
 
+export const getComments = async (postId) => {
+  const data = await getJSON(
+    `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
+  );
+  return data;
+};
+
 // 3) Skapa function för att hämta todos, function bör ta userId som parameter och returna todos
 // URL https://jsonplaceholder.typicode.com/todos?userId=USERID (byt ut USERID mot idt i parameter)

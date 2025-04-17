@@ -9,3 +9,6 @@ import * as fetcher from "./fetcher.js";
 const users = await fetcher.getUsers();
 // använder users() från importerade display ovan och skickar in arrayen med användare
 display.users(users);
+
+const comments = await fetcher.getComments(4);
+console.log(comments);
