@@ -32,5 +32,18 @@ export const showUsers = function (userArr) {
 };
 
 /*Display Posts and Comments function */
+export const showPosts = function (postArr) {
+  postContainer.innerHTML = "";
 
+  postArr.forEach((post, index) => {
+    const postCard = document.createElement("article");
+    postCard.classList.add("post-card");
+    postCard.dataset.postId = `${post.id}-${index}`;
+    postCard.innerHTML = `
+    <h2>${post.title}</h2>
+    <p>${post.body}</p>
+    `;
+    postContainer.append(postCard);
+  });
+};
 /*End function block of Display Posts and Comments */
