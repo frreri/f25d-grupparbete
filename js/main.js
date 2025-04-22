@@ -15,24 +15,22 @@ display.showUsers(users);
 const comments = await fetcher.getComments(4);
 console.log(comments);
 
-const posts = await fetcher.getPosts(2);
-console.log(posts);
-
-const toDos = await fetcher.getTodos(2);
-console.log(toDos);
-
-userContainer.addEventListener("click", (e) => {
+userContainer.addEventListener("click", async (e) => {
   const userCard = e.target.closest(".user-card");
   // Kod inuti nedan block körs när man klickar en användare
   if (userCard) {
     // Nedan har vi userId för användare vi klickat på för att kunna hämta
     // posts och todos och använda i någon funktion för att visa dem som vi skapar i display.js
     // samt user i sig för att kunna använda i någon funktion för att visa användarinfo på samma sätt
+    display.toggleModal();
     const userId = Number(userCard.dataset.userId);
     const user = users.find((usr) => usr.id === userId);
-    console.log("User ID:", userId);
-    console.log("User object:", user);
+    const posts = await fetcher.getPosts(userId);
+    const toDos = await fetcher.getTodos(userId);
 
+    console.log(posts);
+
+    console.log(toDos);
     // Vi behöver skapa funktion för att visa modal, samt för att visa anvinfo, posts (med comments) och todos
     // och använda dessa funktions inom detta kodblock
   }
