@@ -30,3 +30,7 @@ export const showUsers = function (userArr) {
     userContainer.append(userCard);
   });
 };
+
+/*Display Posts and Comments function */
+
+/*End function block of Display Posts and Comments */
