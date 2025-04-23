@@ -27,6 +27,8 @@ userContainer.addEventListener("click", async (e) => {
     const user = users.find((usr) => usr.id === userId);
     const posts = await fetcher.getPosts(userId);
     const toDos = await fetcher.getTodos(userId);
+    
+    display.showPosts(posts);
 
     console.log(posts);
 
