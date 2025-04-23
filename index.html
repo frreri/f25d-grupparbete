@@ -15,18 +15,27 @@
     <script type="module" src="./js/main.js"></script>
   </head>
   <body>
-    <header>
-      <!-- Här kan vi ha någon header bar eller rubrik? -->
+    <header class="site-header">
+      <div class="header-content">
+        <h1>F25D - Grupparbete</h1>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#">Hem</a></li>
+            <li><a href="#user-container">Användare</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
-
     <main class="user-container" id="user-container">
       <!-- Fyll med användarkort eller liknande via js -->
     </main>
 
-    <footer>
-      <!-- En footer kan vi skapa här -->
+    <footer class="site-footer">
+      <p>
+        &copy; 2025 F25D Fredrik E, Ida E, Ida S, Erik E and Mohammed Y. All
+        rights reserved.
+      </p>
     </footer>
-
     <!-- overlay - filter mellan sidan och modalen -->
     <div class="overlay hidden"></div>
     <!-- modal som visas när vi klickar användare -->
