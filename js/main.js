@@ -6,6 +6,8 @@ import * as display from "./display.js";
 import * as fetcher from "./fetcher.js";
 
 const userContainer = document.getElementById("user-container");
+const overlay = document.querySelector(".overlay");
+const closeModal = document.querySelector(".modal-close-btn");
 
 // använder getUsers() från importerade fetcher ovan för att hämta array med användare
 const users = await fetcher.getUsers();
@@ -27,6 +29,11 @@ userContainer.addEventListener("click", async (e) => {
     const user = users.find((usr) => usr.id === userId);
     const posts = await fetcher.getPosts(userId);
     const toDos = await fetcher.getTodos(userId);
+    
+    display.showPosts(posts);
+
+    //Idas kod
+    display.showTodos(toDos);
 
     console.log(posts);
 
@@ -35,3 +42,6 @@ userContainer.addEventListener("click", async (e) => {
     // och använda dessa funktions inom detta kodblock
   }
 });
+
+overlay.addEventListener("click", display.toggleModal);
+closeModal.addEventListener("click", display.toggleModal);
