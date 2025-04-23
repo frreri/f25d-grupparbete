@@ -67,8 +67,32 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  overflow: hidden;
 }
 
 .hidden {
   display: none;
+}
+
+.modal-close-btn {
+  border: none;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.1);
+}
+
+.close-icon {
+  width: 24px;
+  height: 24px;
 }
