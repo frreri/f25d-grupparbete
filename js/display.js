@@ -5,6 +5,8 @@ const todoContainer = document.getElementById("todo-container");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 
+import { getComments } from "./fetcher.js";
+
 /*
 Här kan vi skapa functions för att visa users, posts (med comments) och todos
 När vi skrivit en function kan vi skriva export innan functionen så kan vi använda den i main
@@ -62,19 +64,43 @@ export const showTodos = function(todos){
 }
 
 /*Display Posts and Comments function */
-export const showPosts = function (postArr) {
+export const showPosts = async function (postArr) {
   postContainer.innerHTML = "";
 
-  postArr.forEach((post, index) => {
+  for (const [index, post] of postArr.entries()) {
+  //postArr.forEach((post, index) => {
     const postCard = document.createElement("article");
     postCard.classList.add("post-card");
     postCard.dataset.postId = `${post.id}-${index}`;
     postCard.innerHTML = `
     <h3>${post.title}</h3>
     <p>${post.body}</p>
+    <section>
     `;
+    //waits on the imported getcomments function.
+    const postComment = await getComments(post.id);
+
+    // limits the amount of comments for each posts.
+    const limitedComments = postComment.slice(0,3);
+
+    const commentsContainer = document.createElement("div");
+    commentsContainer.classList.add("comments-container");
+
+    limitedComments.forEach(comment => {
+      const commentName = document.createElement("h4");
+      commentName.classList.add("comment-name");
+      commentName.textContent = comment.name;
+
+      const commentBody = document.createElement("p");
+      commentBody.classList.add("comment");
+      commentBody.textContent = comment.body;
+      commentsContainer.appendChild(commentName);
+      commentsContainer.appendChild(commentBody);
+    });
+
+    postCard.append(commentsContainer);
     postContainer.append(postCard);
-  });
+  }
 };
 /*End function block of Display Posts and Comments */
 
