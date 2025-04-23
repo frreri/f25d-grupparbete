@@ -31,6 +31,7 @@ export const showUsers = function (userArr) {
   });
 };
 
+
 //Idas kod
 export const showTodos = function(todos){
     todoContainer.innerHTML = ""; //behövs detta?
@@ -59,3 +60,21 @@ export const showTodos = function(todos){
 
     })
 }
+
+/*Display Posts and Comments function */
+export const showPosts = function (postArr) {
+  postContainer.innerHTML = "";
+
+  postArr.forEach((post, index) => {
+    const postCard = document.createElement("article");
+    postCard.classList.add("post-card");
+    postCard.dataset.postId = `${post.id}-${index}`;
+    postCard.innerHTML = `
+    <h3>${post.title}</h3>
+    <p>${post.body}</p>
+    `;
+    postContainer.append(postCard);
+  });
+};
+/*End function block of Display Posts and Comments */
+
