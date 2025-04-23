@@ -6,6 +6,12 @@
     <title>F25D - Grupparbete</title>
     <meta name="description" content="F25D User's posts and todos" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Combo&family=Delius+Swash+Caps&family=Dosis:wght@200..800&family=Lancelot&family=League+Script&family=Quintessential&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" src="./js/main.js"></script>
   </head>
   <body>
@@ -34,6 +40,23 @@
     <div class="overlay hidden"></div>
     <!-- modal som visas när vi klickar användare -->
     <div class="modal hidden">
+      <button class="modal-close-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="close-icon"
+        >
+          <title>Close</title>
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18 18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
       <section class="user-section">
         <h2>User</h2>
         <div id="userinfo-container">
