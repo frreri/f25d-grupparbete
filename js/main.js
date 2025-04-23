@@ -28,6 +28,9 @@ userContainer.addEventListener("click", async (e) => {
     const posts = await fetcher.getPosts(userId);
     const toDos = await fetcher.getTodos(userId);
 
+    //Idas kod
+    display.showTodos(toDos);
+
     console.log(posts);
 
     console.log(toDos);

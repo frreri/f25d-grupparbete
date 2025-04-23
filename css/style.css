@@ -72,3 +72,21 @@ body {
 .hidden {
   display: none;
 }
+
+/*------------------------------------------------------------
+/*Todos*/
+.todos-section {
+  padding: 10px;
+}
+
+.todo-container {
+  display: flex;
+}
+
+.todo-item {
+  /*display: grid;
+    grid-template-columns: auto auto;*/
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+}
