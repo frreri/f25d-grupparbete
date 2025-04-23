@@ -40,7 +40,7 @@ export const showPosts = function (postArr) {
     postCard.classList.add("post-card");
     postCard.dataset.postId = `${post.id}-${index}`;
     postCard.innerHTML = `
-    <h2>${post.title}</h2>
+    <h3>${post.title}</h3>
     <p>${post.body}</p>
     `;
     postContainer.append(postCard);
