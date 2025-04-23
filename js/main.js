@@ -26,10 +26,11 @@ userContainer.addEventListener("click", async (e) => {
     // samt user i sig för att kunna använda i någon funktion för att visa användarinfo på samma sätt
     display.toggleModal();
     const userId = Number(userCard.dataset.userId);
-    const user = users.find((usr) => usr.id === userId);
+    const user = await fetcher.getUserInfo(userId);
     const posts = await fetcher.getPosts(userId);
     const toDos = await fetcher.getTodos(userId);
-    
+
+    display.showUserInfo(user);
     display.showPosts(posts);
 
     //Idas kod
