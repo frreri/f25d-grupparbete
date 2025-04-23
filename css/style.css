@@ -96,3 +96,21 @@ body {
   width: 24px;
   height: 24px;
 }
+
+/*------------------------------------------------------------
+/*Todos*/
+.todos-section {
+  padding: 10px;
+}
+
+.todo-container {
+  display: flex;
+}
+
+.todo-item {
+  /*display: grid;
+    grid-template-columns: auto auto;*/
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+}

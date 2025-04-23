@@ -32,6 +32,9 @@ userContainer.addEventListener("click", async (e) => {
     
     display.showPosts(posts);
 
+    //Idas kod
+    display.showTodos(toDos);
+
     console.log(posts);
 
     console.log(toDos);
