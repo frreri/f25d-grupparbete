@@ -75,7 +75,7 @@ export const showPosts = async function (postArr) {
     postCard.innerHTML = `
     <h3>${post.title}</h3>
     <p>${post.body}</p>
-    <section>
+    <h3>Kommentarer</h3>
     `;
     //waits on the imported getcomments function.
     const postComment = await getComments(post.id);
