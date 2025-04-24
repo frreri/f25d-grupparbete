@@ -33,42 +33,39 @@ export const showUsers = function (userArr) {
   });
 };
 
-
 //Idas kod
-export const showTodos = function(todos){
-    todoContainer.innerHTML = ""; //behövs detta?
-    todos.forEach((todo) => {
+export const showTodos = function (todos) {
+  todoContainer.innerHTML = ""; //behövs detta?
+  todos.forEach((todo) => {
+    const todoItem = document.createElement("div");
+    todoItem.classList.add("todo-item");
+    todoContainer.appendChild(todoItem);
 
-      const todoItem = document.createElement("div");
-      todoItem.classList.add("todo-item");
-      todoContainer.appendChild(todoItem);
+    //skapar en label för varje checkbox
+    const todoLabel = document.createElement("label");
+    todoLabel.htmlFor = "checkTodo";
+    todoLabel.textContent = todo.title;
 
-      //skapar en label för varje checkbox
-      const todoLabel = document.createElement("label");
-      todoLabel.htmlFor = "checkTodo";
-      todoLabel.textContent = todo.title;
+    //skapar en checkbox
+    const checkBox = document.createElement("input");
+    checkBox.setAttribute("type", "checkbox");
+    checkBox.id = "checkTodo";
 
-      //skapar en checkbox
-      const checkBox = document.createElement("input");
-      checkBox.setAttribute("type", "checkbox");
-      checkBox.id = "checkTodo";
-      
-      if (todo.completed === true){
-        checkBox.checked = true;
-      }
-    
-      todoItem.append(todoLabel);
-      todoItem.append(checkBox);
+    if (todo.completed === true) {
+      checkBox.checked = true;
+    }
 
-    })
-}
+    todoItem.append(todoLabel);
+    todoItem.append(checkBox);
+  });
+};
 
 /*Display Posts and Comments function */
 export const showPosts = async function (postArr) {
   postContainer.innerHTML = "";
 
   for (const [index, post] of postArr.entries()) {
-  //postArr.forEach((post, index) => {
+    
     const postCard = document.createElement("article");
     postCard.classList.add("post-card");
     postCard.dataset.postId = `${post.id}-${index}`;
@@ -81,12 +78,12 @@ export const showPosts = async function (postArr) {
     const postComment = await getComments(post.id);
 
     // limits the amount of comments for each posts.
-    const limitedComments = postComment.slice(0,3);
+    const limitedComments = postComment.slice(0, 3);
 
     const commentsContainer = document.createElement("div");
     commentsContainer.classList.add("comments-container");
 
-    limitedComments.forEach(comment => {
+    limitedComments.forEach((comment) => {
       const commentName = document.createElement("h4");
       commentName.classList.add("comment-name");
       commentName.textContent = comment.name;
@@ -103,4 +100,3 @@ export const showPosts = async function (postArr) {
   }
 };
 /*End function block of Display Posts and Comments */
-
