@@ -250,3 +250,21 @@ body {
   text-align: center;
   text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
 }
+
+.user-section {
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info {
+  background-color: #f1f0e9;
+  border-radius: 8px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.7);
+}
+.user-info h3 {
+  padding-left: 15px;
+}
+.user-info p {
+  padding-left: 15px;
+}
