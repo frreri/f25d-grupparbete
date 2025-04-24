@@ -32,29 +32,32 @@ export const showUsers = function (userArr) {
 };
 
 //Idas kod
+
 export const showTodos = function (todos) {
-  todoContainer.innerHTML = ""; //behövs detta?
+    //Först rensas containern så att den är tom innan todo-listan ska laddas in.
+  todoContainer.innerHTML = ""; 
   todos.forEach((todo) => {
     const todoItem = document.createElement("div");
     todoItem.classList.add("todo-item");
     todoContainer.appendChild(todoItem);
-
-    //skapar en label för varje checkbox
+    
+    //En label för varje checkbox skapas
     const todoLabel = document.createElement("label");
     todoLabel.htmlFor = "checkTodo";
     todoLabel.textContent = todo.title;
 
-    //skapar en checkbox
+    //En checkbox skapas
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
-    checkBox.id = "checkTodo";
-
-    if (todo.completed === true) {
-      checkBox.checked = true;
+    checkBox.name = "checkTodo";
+      
+    if (todo.completed === true){
+        checkBox.checked = true;
     }
-
+    
     todoItem.append(todoLabel);
     todoItem.append(checkBox);
+
   });
 };
 
