@@ -121,7 +121,7 @@ body {
 
 .modal {
   position: fixed;
-  background-color: #f5f5f5;
+  background-color: #98d2c0;
   border-radius: 8px;
   z-index: 4;
   left: 50%;
@@ -177,6 +177,8 @@ body {
 /*Todos*/
 .todos-section {
   padding: 10px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.7);
+  margin-top: 20px;
 }
 
 .todo-item {
@@ -185,4 +187,66 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 0.5em;
+  background-color: #f1f0e9;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.post-card {
+  background-color: #f1f0e9;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.post-card h3 {
+  color: #497d74;
+  text-transform: capitalize;
+  text-decoration: underline;
+  font-family: "Merienda", cursive;
+  margin-bottom: 10px;
+}
+
+.posts-section {
+  gap: 10px;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.7);
+  margin-top: 20px;
+}
+
+.posts-section h2 {
+  color: #23486a;
+  text-transform: uppercase;
+  font-family: "Merienda", cursive;
+  text-decoration: underline;
+  text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.todos-section h2 {
+  color: #23486a;
+  text-transform: uppercase;
+  font-family: "Merienda", cursive;
+  text-decoration: underline;
+  margin-bottom: 20px; /*Dubbelkolla denna så att alla rubriker är samma höjd.*/
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.user-section h2 {
+  color: #23486a;
+  text-transform: uppercase;
+  font-family: "Merienda", cursive;
+  text-decoration: underline;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
 }
