@@ -77,3 +77,22 @@ export const showPosts = function (postArr) {
   });
 };
 /*End function block of Display Posts and Comments */
+
+export const showUserInfo = function (user) {
+  userInfoContainer.innerHTML = ""; // Töm tidigare innehåll
+
+  const userInfo = document.createElement("div");
+  userInfo.classList.add("user-info");
+
+  userInfo.innerHTML = `
+    <h3>${user.name}</h3>
+    <p><strong>Användarnamn:</strong> ${user.username}</p>
+    <p><strong>Email:</strong> ${user.email}</p>
+    <p><strong>Telefon:</strong> ${user.phone}</p>
+    <p><strong>Hemsida:</strong> <a href="https://${user.website}" target="_blank">${user.website}</a></p>
+    <p><strong>Företag:</strong> ${user.company.name}</p>
+    <p><strong>Adress:</strong> ${user.address.street}, ${user.address.suite}, ${user.address.city}</p>
+  `;
+
+  userInfoContainer.append(userInfo);
+};
