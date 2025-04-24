@@ -31,36 +31,35 @@ export const showUsers = function (userArr) {
   });
 };
 
-
 //Idas kod
-export const showTodos = function(todos){
+
+export const showTodos = function (todos) {
     //Först rensas containern så att den är tom innan todo-listan ska laddas in.
-    todoContainer.innerHTML = ""; 
-    todos.forEach((todo) => {
-
-      const todoItem = document.createElement("div");
-      todoItem.classList.add("todo-item");
-      todoContainer.appendChild(todoItem);
-
-      //En label för varje checkbox skapas
-      const todoLabel = document.createElement("label");
-      todoLabel.htmlFor = "checkTodo";
-      todoLabel.textContent = todo.title;
-
-      //En checkbox skapas
-      const checkBox = document.createElement("input");
-      checkBox.setAttribute("type", "checkbox");
-      checkBox.name = "checkTodo";
-      
-      if (todo.completed === true){
-        checkBox.checked = true;
-      }
+  todoContainer.innerHTML = ""; 
+  todos.forEach((todo) => {
+    const todoItem = document.createElement("div");
+    todoItem.classList.add("todo-item");
+    todoContainer.appendChild(todoItem);
     
-      todoItem.append(todoLabel);
-      todoItem.append(checkBox);
+    //En label för varje checkbox skapas
+    const todoLabel = document.createElement("label");
+    todoLabel.htmlFor = "checkTodo";
+    todoLabel.textContent = todo.title;
 
-    })
-}
+    //En checkbox skapas
+    const checkBox = document.createElement("input");
+    checkBox.setAttribute("type", "checkbox");
+    checkBox.name = "checkTodo";
+      
+    if (todo.completed === true){
+        checkBox.checked = true;
+    }
+    
+    todoItem.append(todoLabel);
+    todoItem.append(checkBox);
+
+  });
+};
 
 /*Display Posts and Comments function */
 export const showPosts = function (postArr) {
@@ -78,4 +77,3 @@ export const showPosts = function (postArr) {
   });
 };
 /*End function block of Display Posts and Comments */
-
