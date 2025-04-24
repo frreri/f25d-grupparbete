@@ -66,6 +66,8 @@ body {
   margin-top: 2rem;
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.3);
   font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
 }
 
 .user-container {
@@ -144,6 +146,7 @@ body {
   width: 100%;
   height: 100%;
   padding: 1rem;
+  gap: 2rem;
 }
 
 .hidden {
@@ -175,11 +178,6 @@ body {
 
 /*------------------------------------------------------------
 /*Todos*/
-.todos-section {
-  padding: 10px;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.7);
-  margin-top: 20px;
-}
 
 .todo-item {
   /*display: grid;
@@ -210,18 +208,13 @@ body {
   margin-bottom: 10px;
 }
 
-.posts-section {
-  gap: 10px;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.7);
-  margin-top: 20px;
-}
-
 .posts-section h2 {
   color: #23486a;
   text-transform: uppercase;
   font-family: "Merienda", cursive;
   text-decoration: underline;
   text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -242,6 +235,7 @@ body {
 
 .user-section h2 {
   color: #23486a;
+  margin-bottom: 20px;
   text-transform: uppercase;
   font-family: "Merienda", cursive;
   text-decoration: underline;
