@@ -87,14 +87,11 @@ export const showPosts = async function (postArr) {
     commentsContainer.classList.add("comments-container");
 
     limitedComments.forEach((comment) => {
-      const commentName = document.createElement("h4");
-      commentName.classList.add("comment-name");
-      commentName.textContent = comment.name;
-
+      
       const commentBody = document.createElement("p");
       commentBody.classList.add("comment");
       commentBody.textContent = comment.body;
-      commentsContainer.appendChild(commentName);
+      
       commentsContainer.appendChild(commentBody);
     });
 
