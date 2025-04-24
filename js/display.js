@@ -13,6 +13,9 @@ När vi skrivit en function kan vi skriva export innan functionen så kan vi anv
 export const toggleModal = () => {
   modal.classList.toggle("hidden");
   overlay.classList.toggle("hidden");
+  todoContainer.innerHTML = "";
+  postContainer.innerHTML = "";
+  userInfoContainer.innerHTML = "";
 };
 
 export const showUsers = function (userArr) {
@@ -34,13 +37,11 @@ export const showUsers = function (userArr) {
 //Idas kod
 
 export const showTodos = function (todos) {
-    //Först rensas containern så att den är tom innan todo-listan ska laddas in.
-  todoContainer.innerHTML = ""; 
   todos.forEach((todo) => {
     const todoItem = document.createElement("div");
     todoItem.classList.add("todo-item");
     todoContainer.appendChild(todoItem);
-    
+
     //En label för varje checkbox skapas
     const todoLabel = document.createElement("label");
     todoLabel.htmlFor = "checkTodo";
@@ -50,21 +51,18 @@ export const showTodos = function (todos) {
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
     checkBox.name = "checkTodo";
-      
-    if (todo.completed === true){
-        checkBox.checked = true;
+
+    if (todo.completed === true) {
+      checkBox.checked = true;
     }
-    
+
     todoItem.append(todoLabel);
     todoItem.append(checkBox);
-
   });
 };
 
 /*Display Posts and Comments function */
 export const showPosts = function (postArr) {
-  postContainer.innerHTML = "";
-
   postArr.forEach((post, index) => {
     const postCard = document.createElement("article");
     postCard.classList.add("post-card");
@@ -79,8 +77,6 @@ export const showPosts = function (postArr) {
 /*End function block of Display Posts and Comments */
 
 export const showUserInfo = function (user) {
-  userInfoContainer.innerHTML = ""; // Töm tidigare innehåll
-
   const userInfo = document.createElement("div");
   userInfo.classList.add("user-info");
 
