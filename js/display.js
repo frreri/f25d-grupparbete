@@ -32,29 +32,32 @@ export const showUsers = function (userArr) {
 };
 
 //Idas kod
+
 export const showTodos = function (todos) {
-  todoContainer.innerHTML = ""; //behövs detta?
+    //Först rensas containern så att den är tom innan todo-listan ska laddas in.
+  todoContainer.innerHTML = ""; 
   todos.forEach((todo) => {
     const todoItem = document.createElement("div");
     todoItem.classList.add("todo-item");
     todoContainer.appendChild(todoItem);
-
-    //skapar en label för varje checkbox
+    
+    //En label för varje checkbox skapas
     const todoLabel = document.createElement("label");
     todoLabel.htmlFor = "checkTodo";
     todoLabel.textContent = todo.title;
 
-    //skapar en checkbox
+    //En checkbox skapas
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
-    checkBox.id = "checkTodo";
-
-    if (todo.completed === true) {
-      checkBox.checked = true;
+    checkBox.name = "checkTodo";
+      
+    if (todo.completed === true){
+        checkBox.checked = true;
     }
-
+    
     todoItem.append(todoLabel);
     todoItem.append(checkBox);
+
   });
 };
 
@@ -74,3 +77,22 @@ export const showPosts = function (postArr) {
   });
 };
 /*End function block of Display Posts and Comments */
+
+export const showUserInfo = function (user) {
+  userInfoContainer.innerHTML = ""; // Töm tidigare innehåll
+
+  const userInfo = document.createElement("div");
+  userInfo.classList.add("user-info");
+
+  userInfo.innerHTML = `
+    <h3>${user.name}</h3>
+    <p><strong>Användarnamn:</strong> ${user.username}</p>
+    <p><strong>Email:</strong> ${user.email}</p>
+    <p><strong>Telefon:</strong> ${user.phone}</p>
+    <p><strong>Hemsida:</strong> <a href="https://${user.website}" target="_blank">${user.website}</a></p>
+    <p><strong>Företag:</strong> ${user.company.name}</p>
+    <p><strong>Adress:</strong> ${user.address.street}, ${user.address.suite}, ${user.address.city}</p>
+  `;
+
+  userInfoContainer.append(userInfo);
+};

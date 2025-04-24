@@ -47,6 +47,16 @@ export const getComments = async (postId) => {
 // URL https://jsonplaceholder.typicode.com/todos?userId=USERID (byt ut USERID mot idt i parameter)
 
 export const getTodos = async (userId) => {
-  const data = await getJSON(`https://jsonplaceholder.typicode.com/todos?userId=${userId}`);
+  const data = await getJSON(
+    `https://jsonplaceholder.typicode.com/todos?userId=${userId}`
+  );
   return data;
-}
+};
+
+// 4) Funktion för att hämta info om en specifik user
+export const getUserInfo = async (userId) => {
+  const data = await getJSON(
+    `https://jsonplaceholder.typicode.com/users/${userId}`
+  );
+  return data;
+};
