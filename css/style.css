@@ -9,6 +9,8 @@ body {
   justify-content: space-around;
   align-items: center;
   background: linear-gradient(rgb(128, 193, 136), rgb(6, 82, 114));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Header */
