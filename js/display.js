@@ -68,7 +68,6 @@ export const showPosts = async function (postArr) {
   postContainer.innerHTML = "";
 
   for (const [index, post] of postArr.entries()) {
-    
     const postCard = document.createElement("article");
     postCard.classList.add("post-card");
     postCard.dataset.postId = `${post.id}-${index}`;
@@ -87,11 +86,10 @@ export const showPosts = async function (postArr) {
     commentsContainer.classList.add("comments-container");
 
     limitedComments.forEach((comment) => {
-      
       const commentBody = document.createElement("p");
       commentBody.classList.add("comment");
       commentBody.textContent = comment.body;
-      
+
       commentsContainer.appendChild(commentBody);
     });
 
