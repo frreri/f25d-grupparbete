@@ -6,12 +6,6 @@
     <title>F25D - Grupparbete</title>
     <meta name="description" content="F25D User's posts and todos" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Combo&family=Delius+Swash+Caps&family=Dosis:wght@200..800&family=Lancelot&family=League+Script&family=Quintessential&display=swap"
-      rel="stylesheet"
-    />
     <script type="module" src="./js/main.js"></script>
   </head>
   <body>
@@ -30,55 +24,36 @@
       <!-- Fyll med användarkort eller liknande via js -->
     </main>
 
+    <!-- overlay - filter mellan sidan och modalen -->
+    <div class="overlay hidden"></div>
+    <!-- modal som visas när vi klickar användare -->
+    <div class="modal hidden">
+      <section class="user-section">
+        <h2>User</h2>
+        <div id="userinfo-container">
+          <!-- Fylla på med lite användarinfo via js? -->
+        </div>
+      </section>
+
+      <section class="posts-section">
+        <h2>Posts</h2>
+        <div id="post-container">
+          <!-- fyll på med posts via js, varje post har en egen container för dess comments? -->
+        </div>
+      </section>
+
+      <section class="todos-section">
+        <h2>Todos</h2>
+        <div id="todo-container">
+          <!-- fylla på med todos via js -->
+        </div>
+      </section>
+    </div>
     <footer class="site-footer">
       <p>
         &copy; 2025 F25D Fredrik E, Ida E, Ida S, Erik E and Mohammed Y. All
         rights reserved.
       </p>
     </footer>
-    <!-- overlay - filter mellan sidan och modalen -->
-    <div class="overlay hidden"></div>
-    <!-- modal som visas när vi klickar användare -->
-    <div class="modal hidden">
-      <button class="modal-close-btn">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="close-icon"
-        >
-          <title>Close</title>
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18 18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
-      <div class="sections-container">
-        <section class="user-section">
-          <h2>User</h2>
-          <div id="userinfo-container" class="userinfo-container">
-            <!-- Fylla på med lite användarinfo via js? -->
-          </div>
-        </section>
-
-        <section class="posts-section">
-          <h2>Posts</h2>
-          <div id="post-container" class="post-container">
-            <!-- fyll på med posts via js, varje post har en egen container för dess comments? -->
-          </div>
-        </section>
-
-        <section class="todos-section">
-          <h2>Todos</h2>
-          <div id="todo-container" class="todo-container">
-            <!-- fylla på med todos via js -->
-          </div>
-        </section>
-      </div>
-    </div>
   </body>
 </html>
