@@ -206,6 +206,7 @@ body {
   text-decoration: underline;
   font-family: "Merienda", cursive;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .posts-section h2 {
@@ -219,6 +220,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.comment {
+  padding-bottom: 20px;
+  text-transform: capitalize;
 }
 
 .todos-section h2 {
@@ -239,16 +245,11 @@ body {
   text-transform: uppercase;
   font-family: "Merienda", cursive;
   text-decoration: underline;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
-}
-
-.user-section {
-  margin-top: 20px;
-  justify-content: center;
-  align-items: center;
 }
 
 .user-info {
@@ -257,8 +258,17 @@ body {
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.7);
 }
 .user-info h3 {
-  padding-left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border-bottom: dotted #497d74;
+  margin: 0 20px;
+  font-family: "Merienda", cursive;
+  color: #497d74;
 }
 .user-info p {
-  padding-left: 15px;
+  padding: 10px;
+  margin: 5px 20px;
 }
