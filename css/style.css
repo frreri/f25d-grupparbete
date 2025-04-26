@@ -4,10 +4,6 @@
   padding: 0;
 }
 body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
   background: linear-gradient(rgb(128, 193, 136), rgb(6, 82, 114));
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -148,8 +144,18 @@ body {
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  /* padding: 1rem; */
   gap: 2rem;
+}
+
+.modal-section {
+  height: 100%;
+}
+
+.post-container,
+.todo-container {
+  overflow: auto;
+  height: 92%;
 }
 
 .hidden {
@@ -212,17 +218,18 @@ body {
   margin-top: 20px;
 }
 
-.posts-section h2 {
+.modal-section h2 {
   color: #23486a;
   text-transform: uppercase;
   font-family: "Merienda", cursive;
   text-decoration: underline;
   text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  height: 8%;
 }
 
 .comment {
@@ -230,29 +237,8 @@ body {
   text-transform: capitalize;
 }
 
-.todos-section h2 {
-  color: #23486a;
-  text-transform: uppercase;
-  font-family: "Merienda", cursive;
-  text-decoration: underline;
-  margin-bottom: 20px; /*Dubbelkolla denna så att alla rubriker är samma höjd.*/
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
-}
-
-.user-section h2 {
-  color: #23486a;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  font-family: "Merienda", cursive;
-  text-decoration: underline;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-shadow: 4px 2px 5px rgba(0, 0, 0, 0.6);
+.userinfo-container {
+  margin: 10px;
 }
 
 .user-info {
@@ -274,4 +260,20 @@ body {
 .user-info p {
   padding: 10px;
   margin: 5px 20px;
+}
+
+@media only screen and (max-width: 796px) {
+  .modal-section {
+    height: unset;
+  }
+
+  .post-container,
+  .todo-container {
+    overflow: unset;
+    height: unset;
+  }
+
+  .modal-section h2 {
+    height: unset;
+  }
 }
