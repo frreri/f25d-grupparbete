@@ -31,12 +31,15 @@
     <header class="site-header">
       <div class="header-content">
         <h1>F25D - Grupparbete</h1>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#">Hem</a></li>
-            <li><a href="#user-container">Användare</a></li>
-          </ul>
-        </nav>
+        <div class="search-container">
+          <input
+            type="text"
+            id="user-search"
+            placeholder="Sök användare..."
+            aria-label="Sök användare"
+          />
+          <i class="fas fa-search search-icon"></i>
+        </div>
       </div>
     </header>
     <main class="user-container" id="user-container">
@@ -45,7 +48,7 @@
 
     <footer class="site-footer">
       <p>
-        &copy; 2025 F25D Fredrik E, Ida E, Ida S, Erik E and Mohammed Y. All
+        &copy; 2025 F25D – Fredrik E, Ida E, Ida S, Erik E, Mohammed Y. All
         rights reserved.
       </p>
     </footer>
