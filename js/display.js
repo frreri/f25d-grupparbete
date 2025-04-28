@@ -47,13 +47,13 @@ export const showTodos = function (todos) {
 
     //En label för varje checkbox skapas
     const todoLabel = document.createElement("label");
-    todoLabel.htmlFor = "checkTodo";
+    todoLabel.htmlFor = `todo-${todo.id}`;
     todoLabel.textContent = todo.title;
 
     //En checkbox skapas
     const checkBox = document.createElement("input");
     checkBox.setAttribute("type", "checkbox");
-    checkBox.name = "checkTodo";
+    checkBox.id = `todo-${todo.id}`;
 
     if (todo.completed === true) {
       checkBox.checked = true;
