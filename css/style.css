@@ -152,6 +152,22 @@ body {
   height: 100%;
 }
 
+.spinner {
+  color: #23486a;
+  font-size: 3rem;
+  animation: 3s linear infinite rotate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .post-container,
 .todo-container {
   overflow: auto;

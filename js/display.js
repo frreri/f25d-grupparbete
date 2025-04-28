@@ -7,11 +7,6 @@ const overlay = document.querySelector(".overlay");
 
 import { getComments } from "./fetcher.js";
 
-/*
-Här kan vi skapa functions för att visa users, posts (med comments) och todos
-När vi skrivit en function kan vi skriva export innan functionen så kan vi använda den i main
-*/
-
 export const toggleModal = () => {
   modal.classList.toggle("hidden");
   overlay.classList.toggle("hidden");
@@ -20,8 +15,13 @@ export const toggleModal = () => {
   userInfoContainer.innerHTML = "";
 };
 
+export const showSpinners = () => {
+  [userInfoContainer, postContainer, todoContainer].forEach((container) => {
+    container.innerHTML = '<i class="fa-solid fa-gear spinner"></i>';
+  });
+};
+
 export const showUsers = function (userArr) {
-  // nollställer först så att containern är tom innan jag fyller på med användare
   userContainer.innerHTML = "";
   userArr.forEach((user, index) => {
     const userCard = document.createElement("article");
@@ -39,6 +39,7 @@ export const showUsers = function (userArr) {
 //Idas kod
 
 export const showTodos = function (todos) {
+  todoContainer.innerHTML = "";
   todos.forEach((todo) => {
     const todoItem = document.createElement("div");
     todoItem.classList.add("todo-item");
@@ -65,8 +66,7 @@ export const showTodos = function (todos) {
 
 /*Display Posts and Comments function */
 export const showPosts = async function (postArr) {
-  postContainer.innerHTML = "";
-
+  const posts = document.createElement("div");
   for (const [index, post] of postArr.entries()) {
     const postCard = document.createElement("article");
     postCard.classList.add("post-card");
@@ -94,12 +94,15 @@ export const showPosts = async function (postArr) {
     });
 
     postCard.append(commentsContainer);
-    postContainer.append(postCard);
+    posts.append(postCard);
   }
+  postContainer.innerHTML = "";
+  postContainer.append(posts);
 };
 /*End function block of Display Posts and Comments */
 
 export const showUserInfo = function (user) {
+  userInfoContainer.innerHTML = "";
   const userInfo = document.createElement("div");
   userInfo.classList.add("user-info");
 
