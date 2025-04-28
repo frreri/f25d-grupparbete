@@ -4,25 +4,40 @@ import * as fetcher from "./fetcher.js";
 const userContainer = document.getElementById("user-container");
 const overlay = document.querySelector(".overlay");
 const closeModal = document.querySelector(".modal-close-btn");
+const searchInput = document.getElementById("user-search");
 
-const users = await fetcher.getUsers();
-display.showUsers(users);
+let allUsers = [];
+
+// hämta och visa alla användare
+async function init() {
+  allUsers = await fetcher.getUsers();
+  display.showUsers(allUsers);
+}
+init();
+
+// filtrera på namn
+searchInput.addEventListener("input", (e) => {
+  const term = e.target.value.toLowerCase();
+  const filtered = allUsers.filter((u) => u.name.toLowerCase().includes(term));
+  display.showUsers(filtered);
+});
 
 userContainer.addEventListener("click", async (e) => {
   const userCard = e.target.closest(".user-card");
-  // Kod inuti nedan block körs när man klickar en användare
-  if (userCard) {
-    display.toggleModal();
-    display.showSpinners();
-    const userId = Number(userCard.dataset.userId);
-    const user = fetcher.getUserInfo(userId);
-    const posts = fetcher.getPosts(userId);
-    const toDos = fetcher.getTodos(userId);
+  if (!userCard) return;
 
-    display.showUserInfo(await user);
-    display.showTodos(await toDos);
-    display.showPosts(await posts);
-  }
+  display.toggleModal();
+  display.showSpinners();
+  const userId = Number(userCard.dataset.userId);
+  const [user, posts, toDos] = await Promise.all([
+    fetcher.getUserInfo(userId),
+    fetcher.getPosts(userId),
+    fetcher.getTodos(userId),
+  ]);
+
+  display.showUserInfo(user);
+  display.showPosts(posts);
+  display.showTodos(toDos);
 });
 
 overlay.addEventListener("click", display.toggleModal);
