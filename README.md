@@ -5,7 +5,7 @@
 Detta är en webbplats som visar användardata som hämtas från ett API. Webbplatsen är byggd med HTML, CSS och JavaScript.
 
 
-Github page: (Klicka här!)[https://frreri.github.io/f25d-grupparbete/]
+Github page: [Klicka här!](https://frreri.github.io/f25d-grupparbete)
 
 
 ## Struktur
