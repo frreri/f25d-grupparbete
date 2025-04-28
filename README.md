@@ -9,7 +9,7 @@ Detta är en webbplats som visar användardata som hämtas från ett API. Webbpl
 - `index.html`: Webbplatsens huvudsida.
 - `css/style.css`: Stilar för webbplatsen.
 - `js/fetcher.js`: Funktioner som hämtar data från API:et.
-- `js/main.js`: Klickfunktioner för webbplasen.
+- `js/main.js`: Huvudfilen som är länkad i index.html, importerar från de andra filerna och sätter klickfunktioner för webbplasen.
 - `js/display.js`: Funktioner för att visa användardata på webbplatsen.
 
 ## Användning
