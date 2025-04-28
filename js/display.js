@@ -28,7 +28,7 @@ export const showUsers = function (userArr) {
     userCard.classList.add("user-card");
     userCard.dataset.userId = user.id;
     userCard.innerHTML = `
-      <img src="https://picsum.photos/100/?random=${index}" alt="avatar">
+      <img src="../img/default-avatar.webp" class="avatar" alt="avatar">
       <h2>${user.name}</h2>
       <p>Email: ${user.email}</p>
     `;
