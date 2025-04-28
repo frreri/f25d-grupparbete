@@ -106,6 +106,11 @@ body {
   font-family: "Quintessential", serif;
   font-style: normal;
 }
+
+.avatar {
+  width: 100px;
+  height: 100px;
+}
 /*--------------------------------------------------------------------------------------------*/
 /*Overlay & Modal*/
 
@@ -133,7 +138,7 @@ body {
   height: 85lvh;
 }
 
-.modal section {
+.modal-section {
   width: 320px;
 }
 
@@ -150,7 +155,6 @@ body {
   text-transform: uppercase;
   font-family: "Merienda", cursive;
 }
-
 
 .sections-container {
   overflow: auto;
@@ -293,9 +297,10 @@ body {
   margin: 5px 20px;
 }
 
-@media only screen and (max-width: 796px) {
+@media only screen and (max-width: 1170px) {
   .modal-section {
     height: unset;
+    width: 60%;
   }
 
   .shortcut-container {
@@ -310,5 +315,17 @@ body {
 
   .modal-section h2 {
     height: unset;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .modal-section {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .modal-section {
+    width: 92%;
   }
 }
