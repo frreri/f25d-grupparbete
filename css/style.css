@@ -137,6 +137,21 @@ body {
   width: 320px;
 }
 
+.shortcut-container {
+  display: none;
+  gap: 1rem;
+  position: absolute;
+  top: 1rem;
+}
+
+.shortcut {
+  text-decoration: none;
+  color: #23486a;
+  text-transform: uppercase;
+  font-family: "Merienda", cursive;
+}
+
+
 .sections-container {
   overflow: auto;
   display: flex;
@@ -281,6 +296,10 @@ body {
 @media only screen and (max-width: 796px) {
   .modal-section {
     height: unset;
+  }
+
+  .shortcut-container {
+    display: flex;
   }
 
   .post-container,

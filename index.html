@@ -53,6 +53,11 @@
     <div class="overlay hidden"></div>
     <!-- modal som visas när vi klickar användare -->
     <div class="modal hidden">
+      <div class="shortcut-container">
+        <a href="#user-section" class="shortcut">User</a>
+        <a href="#posts-section" class="shortcut">Posts</a>
+        <a href="#todos-section" class="shortcut">Todos</a>
+      </div>
       <button class="modal-close-btn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -71,21 +76,21 @@
         </svg>
       </button>
       <div class="sections-container">
-        <section class="user-section modal-section">
+        <section class="user-section modal-section" id="user-section">
           <h2>User</h2>
           <div id="userinfo-container" class="userinfo-container">
             <!-- Fylla på med lite användarinfo via js? -->
           </div>
         </section>
 
-        <section class="posts-section modal-section">
+        <section class="posts-section modal-section" id="posts-section">
           <h2>Posts</h2>
           <div id="post-container" class="post-container">
             <!-- fyll på med posts via js, varje post har en egen container för dess comments? -->
           </div>
         </section>
 
-        <section class="todos-section modal-section">
+        <section class="todos-section modal-section" id="todos-section">
           <h2>Todos</h2>
           <div id="todo-container" class="todo-container">
             <!-- fylla på med todos via js -->
