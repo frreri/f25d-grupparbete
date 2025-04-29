@@ -1,11 +1,11 @@
+import { getComments } from "./fetcher.js";
+
 const userContainer = document.getElementById("user-container");
 const userInfoContainer = document.getElementById("userinfo-container");
 const postContainer = document.getElementById("post-container");
 const todoContainer = document.getElementById("todo-container");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
-
-import { getComments, getComments2 } from "./fetcher.js";
 
 export const toggleModal = () => {
   modal.classList.toggle("hidden");
@@ -66,9 +66,9 @@ export const showTodos = function (todos) {
 
 /*Display Posts and Comments function */
 export const showPosts = async function (postArr) {
-  const comments = await getComments2(postArr);
-  console.log(comments);
-  const posts = document.createElement("div");
+  const allComments = (await getComments(postArr)).flat();
+
+  postContainer.innerHTML = "";
   for (const [index, post] of postArr.entries()) {
     const postCard = document.createElement("article");
     postCard.classList.add("post-card");
@@ -78,11 +78,13 @@ export const showPosts = async function (postArr) {
     <p>${post.body}</p>
     <h3>Kommentarer</h3>
     `;
-    //waits on the imported getcomments function.
-    const postComment = await getComments(post.id);
 
+    // filtrera ut comments som hör till denna post
+    const postComments = allComments.filter(
+      (comment) => comment.postId === post.id
+    );
     // limits the amount of comments for each posts.
-    const limitedComments = postComment.slice(0, 3);
+    const limitedComments = postComments.slice(0, 3);
 
     const commentsContainer = document.createElement("div");
     commentsContainer.classList.add("comments-container");
@@ -96,10 +98,8 @@ export const showPosts = async function (postArr) {
     });
 
     postCard.append(commentsContainer);
-    posts.append(postCard);
+    postContainer.append(postCard);
   }
-  postContainer.innerHTML = "";
-  postContainer.append(posts);
 };
 /*End function block of Display Posts and Comments */
 

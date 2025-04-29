@@ -22,14 +22,7 @@ export const getPosts = async (userId) => {
   return data;
 };
 
-export const getComments = async (postId) => {
-  const data = await getJSON(
-    `https://jsonplaceholder.typicode.com/comments?postId=${postId}`
-  );
-  return data;
-};
-
-export const getComments2 = async (postArr) => {
+export const getComments = async (postArr) => {
   const commentPromises = [];
   postArr.forEach((post) => {
     commentPromises.push(
