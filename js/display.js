@@ -5,7 +5,7 @@ const todoContainer = document.getElementById("todo-container");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 
-import { getComments } from "./fetcher.js";
+import { getComments, getComments2 } from "./fetcher.js";
 
 export const toggleModal = () => {
   modal.classList.toggle("hidden");
@@ -66,6 +66,8 @@ export const showTodos = function (todos) {
 
 /*Display Posts and Comments function */
 export const showPosts = async function (postArr) {
+  const comments = await getComments2(postArr);
+  console.log(comments);
   const posts = document.createElement("div");
   for (const [index, post] of postArr.entries()) {
     const postCard = document.createElement("article");

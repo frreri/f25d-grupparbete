@@ -29,6 +29,17 @@ export const getComments = async (postId) => {
   return data;
 };
 
+export const getComments2 = async (postArr) => {
+  const commentPromises = [];
+  postArr.forEach((post) => {
+    commentPromises.push(
+      getJSON(`https://jsonplaceholder.typicode.com/comments?postId=${post.id}`)
+    );
+  });
+  const data = Promise.all(commentPromises);
+  return data;
+};
+
 export const getTodos = async (userId) => {
   const data = await getJSON(
     `https://jsonplaceholder.typicode.com/todos?userId=${userId}`
