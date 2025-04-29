@@ -29,7 +29,7 @@ export const getComments = async (postArr) => {
       getJSON(`https://jsonplaceholder.typicode.com/comments?postId=${post.id}`)
     );
   });
-  const data = Promise.all(commentPromises);
+  const data = (await Promise.all(commentPromises)).flat();
   return data;
 };
 

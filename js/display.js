@@ -66,7 +66,7 @@ export const showTodos = function (todos) {
 
 /*Display Posts and Comments function */
 export const showPosts = async function (postArr) {
-  const allComments = (await getComments(postArr)).flat();
+  const allComments = await getComments(postArr);
 
   postContainer.innerHTML = "";
   for (const [index, post] of postArr.entries()) {
