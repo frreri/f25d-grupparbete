@@ -67,10 +67,9 @@ export const showPosts = async function (postArr) {
   const allComments = await getComments(postArr);
 
   postContainer.innerHTML = "";
-  for (const [index, post] of postArr.entries()) {
+  postArr.forEach((post) => {
     const postCard = document.createElement("article");
     postCard.classList.add("post-card");
-    postCard.dataset.postId = `${post.id}-${index}`;
     postCard.innerHTML = `
     <h3>${post.title}</h3>
     <p>${post.body}</p>
@@ -97,7 +96,7 @@ export const showPosts = async function (postArr) {
 
     postCard.append(commentsContainer);
     postContainer.append(postCard);
-  }
+  });
 };
 /*End function block of Display Posts and Comments */
 
