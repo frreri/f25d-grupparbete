@@ -36,8 +36,6 @@ export const showUsers = function (userArr) {
   });
 };
 
-//Idas kod
-
 export const showTodos = function (todos) {
   todoContainer.innerHTML = "";
   todos.forEach((todo) => {
