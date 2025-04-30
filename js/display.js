@@ -23,7 +23,7 @@ export const showSpinners = () => {
 
 export const showUsers = function (userArr) {
   userContainer.innerHTML = "";
-  userArr.forEach((user, index) => {
+  userArr.forEach((user) => {
     const userCard = document.createElement("article");
     userCard.classList.add("user-card");
     userCard.dataset.userId = user.id;
